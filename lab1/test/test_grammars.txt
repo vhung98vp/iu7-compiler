@@ -1,0 +1,17 @@
+S -> aA
+A -> aB
+B -> bA
+
+S -> aA
+A -> bB | aA | cA
+B -> bC | aB | cB
+C -> aC | cC
+
+S -> aA
+A -> bB | aA | cA
+B -> bC | aB | c
+C -> aC | cC
+
+S -> 0A | 1S | e
+A -> 0B | 1A
+B -> 0S | 1B
