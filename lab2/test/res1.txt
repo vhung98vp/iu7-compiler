@@ -1,0 +1,11 @@
+5
+A S' B A' S
+4
++ * b a
+5
+A -> SA'
+A' -> ε | bBA'
+B -> b | +A
+S -> +AS' | bS'
+S' -> *BS' | ε
+S
