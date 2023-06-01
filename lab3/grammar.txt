@@ -1,0 +1,30 @@
+Start:
+<program>                   -> <block>
+<block>                     -> { <operator list> }
+<operator list>             -> <operator> <tail>
+<operator>                  -> <identifier> = <expression> | <block>
+<tail>                      -> ; <operator> <tail> | ε
+<expression>                -> <simple expression> | <simple expression> <relation operation> <simple expression>
+<simple expression>         -> <term> | <sign> <term> | <simple expression> <addition operation> <term>
+<term>                      -> <factor> | <term> <multiplication operation> <factor>
+<factor>                    -> <identifier> | <constant> | ( <simple expression> ) | not <factor>
+<relation operation>        -> == | <> | < | <= | > | >=
+<sign>                      -> + | -
+<addition operation>        -> + | - | or
+<multiplication operation>  -> * | / | div | mod | and
+
+
+Modified:
+<program>                   -> <block>
+<block>                     -> { <operator list> }
+<operator list>             -> <operator> <tail>
+<operator>                  -> <identifier> = <expression> | <block>
+<tail>                      -> ; <operator> <tail> | ε
+<expression>                -> <simple expression> <expression'>
+<expression'>               -> <relation operation> <simple expression> | ε
+<simple expression>         -> <term> <term rest> | <sign> <term> <term rest>
+<term rest>                 -> <simple expression'> | ε
+<simple expression'>        -> <addition operation> <term> <simple expression'> | ε
+<term>                      -> <factor> <term'>
+<term'>                     -> <multiplication operation> <factor> <term'> | ε
+<factor>                    -> <identifier> | <constant> | ( <simple expression> ) | not <factor>
