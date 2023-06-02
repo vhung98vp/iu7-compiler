@@ -11,7 +11,7 @@ def main():
   parser = Parser(tokens)
   try:
     parser.ParseProgram()
-    parser.display_graph('./res.pdf')
+    parser.display_graph('./res.png')
     print('\nAccepted')
   except Exception as e:
     print(e)

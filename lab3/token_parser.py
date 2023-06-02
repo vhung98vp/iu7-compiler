@@ -17,7 +17,7 @@ class Parser:
     return self._current < len(self._tokens)
 
   def display_graph(self, path):
-    layout = self._g.graph.layout(layout='auto')
+    layout = self._g.graph.layout(layout='rt')
     styles = {
       'vertex_size': 5,
       'vertex_label': self._g.graph.vs['name'],
