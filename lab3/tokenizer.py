@@ -62,10 +62,16 @@ class Tokenizer:
           tokens.append(EqualToken())
           self._reader.read(1)
       elif c == '+':
-        tokens.append(PlusToken())
+        if isinstance(tokens[-1], AssignmentToken) or isinstance(tokens[-1], RelationToken):
+          tokens.append(PositiveToken())
+        else:
+          tokens.append(PlusToken())
         self._reader.read(1)
       elif c == '-':
-        tokens.append(MinusToken())
+        if isinstance(tokens[-1], AssignmentToken) or isinstance(tokens[-1], RelationToken):
+          tokens.append(NegativeToken())
+        else:
+          tokens.append(MinusToken())
         self._reader.read(1)
       elif c == '*':
         tokens.append(MultiplyToken())

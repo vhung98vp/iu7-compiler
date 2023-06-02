@@ -13,7 +13,6 @@ Start:
 <addition operation>        -> + | - | or
 <multiplication operation>  -> * | / | div | mod | and
 
-
 Modified:
 <program>                   -> <block>
 <block>                     -> { <operator list> }
@@ -28,3 +27,7 @@ Modified:
 <term>                      -> <factor> <term'>
 <term'>                     -> <multiplication operation> <factor> <term'> | ε
 <factor>                    -> <identifier> | <constant> | ( <simple expression> ) | not <factor>
+<relation operation>        -> == | <> | < | <= | > | >=
+<sign>                      -> + | -
+<addition operation>        -> + | - | or
+<multiplication operation>  -> * | / | div | mod | and

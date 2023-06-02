@@ -1,0 +1,7 @@
+{
+    x = 5;
+    y = 3 * x;
+    z = (x + y) * 2;
+    z_positive = z > 0;
+    result = not z_positive or z >= x + y;
+}

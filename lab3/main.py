@@ -9,23 +9,13 @@ def main():
   tokenizer = Tokenizer(src_code)
   tokens = tokenizer.tokenize()
   parser = Parser(tokens)
-# try:
-  parser.ParseProgram()
-
-  styles = {
-    'vertex_size': 5,
-    'vertex_label': parser._g.graph.vs['name'],
-    'vertex_label_size': 12,
-    'vertex_label_dist': 3,
-    'bbox': (900, 500),
-    'margin': 20,
-  }
-  parser.display_graph('./res.pdf', 'rt_circular', styles)
-
-  print('\nAccepted')
-# except Exception as e:
-#   print(e)
-#   print('\nRejected')
+  try:
+    parser.ParseProgram()
+    parser.display_graph('./res.pdf')
+    print('\nAccepted')
+  except Exception as e:
+    print(e)
+    print('\nRejected')
 
 if __name__ == '__main__':
   main()

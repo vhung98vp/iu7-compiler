@@ -48,10 +48,10 @@ class OrToken(AdditionToken):
     self.val = 'or'
 
 class SignToken(Token): pass
-class PlusToken(SignToken):
+class PositiveToken(SignToken):
   def __init__(self):
     self.val = '+'
-class MinusToken(SignToken):
+class NegativeToken(SignToken):
   def __init__(self):
     self.val = '-'
 

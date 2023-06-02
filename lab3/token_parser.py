@@ -16,10 +16,17 @@ class Parser:
     self._current += 1
     return self._current < len(self._tokens)
 
-  def display_graph(self, path, layout, styles):
-    pass
-    # layout = self._g.graph.layout('rt', mode='in', root=0)
-    # ig.plot(self._g.graph, path, layout = layout, **styles)
+  def display_graph(self, path):
+    layout = self._g.graph.layout(layout='auto')
+    styles = {
+      'vertex_size': 5,
+      'vertex_label': self._g.graph.vs['name'],
+      'vertex_label_size': 12,
+      'vertex_label_dist': 3,
+      'bbox': (900, 500),
+      'margin': 20,
+    }
+    ig.plot(self._g.graph, path, layout=layout, **styles)
 
   # <program> -> <block>
   def ParseProgram(self):
